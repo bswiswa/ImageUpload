@@ -9,3 +9,11 @@ Router.route('/profile',{
  this.render('Loading');
  }
 });
+
+Router.route('/', function () {
+	this.render('upload');
+});
+
+// Router.route('/', function () {
+// 	this.render('Profile');
+// });

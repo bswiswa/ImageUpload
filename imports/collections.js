@@ -1,12 +1,13 @@
-var imageStore = new FS.Store.GridFS(“images”);
+import { Mongo } from 'meteor/mongo';
+import { Meteor } from 'meteor/meteor';
 
-Images = new FS.Collection(“images”, {
+var imageStore = new FS.Store.GridFS("images");
+
+export const Images = new FS.Collection("images", {
  stores: [imageStore]
 });
 
 if(Meteor.isServer) {
 	Meteor.publish("images", function(){ return Images.find(); });
-
-
 
 }
