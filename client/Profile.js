@@ -10,7 +10,10 @@ Template.Profile.helpers({
   // profile: function(){
   //   return 0;
   // },
-
+  find_images() {
+  	return Images.find();
+  }, 
+  
   find_users() {
       return Meteor.users.find({});
     }
