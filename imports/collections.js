@@ -8,6 +8,12 @@ export var Images = new FS.Collection("images", {
 });
 
 if(Meteor.isServer) {
-	Meteor.publish("images", function(){ return Images.find(); });
+	Meteor.publish("images", function(){
+		return Images.find(); 
+	});
+	Meteor.publish("users", function() {
+		return Meteor.users.find({"_id": this.userId()
+	});
+	});	
 
 }
